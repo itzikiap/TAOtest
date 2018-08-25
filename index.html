@@ -2,23 +2,34 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css"/>
-
+	<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css"/>
+	<style>
+		ul { 
+			list-style-type: none;
+			margin: 0px;
+			padding: 4px;
+		} 
+		li { 
+			display : block;
+			margin: 2px;
+			background-color: #dddddd
+		}
+	</style>
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 	<script src="script.js"></script>
 	<script>
 	  function submit() {
-		searchNames($("#name")[0].value);
+		searchNames($("#namesFilterTxt")[0].value);
 	  }
 	  
 	</script>
-	<title></title>
+	<title>Test for TAO</title>
 </head>
 <body>
-	<input id="name"/>
+	<p>Please enter a search criteria:</p>
+	<input id="namesFilterTxt" class="ui-priority-primary" />
 	<button type="submit" onclick="submit()">Submit</button>
-	<div id="dialog">
-	</div>
+	<div id="content"></div>
 </body>
 </html>
