@@ -19,17 +19,25 @@
 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 	<script src="namesListDialog.js"></script>
 	<script>
-	  function submit() {
-		searchNames($("#namesFilterTxt")[0].value);
-	  }
-	  
+		(function() {
+			function submitForm() {
+				searchNames($("#namesFilterTxt")[0].value);
+			}
+			
+			function init() {
+				$("#submit").on("click", function () {
+					submitForm();
+				});
+			}
+			$.when( $.ready ).then(init);
+		})();
 	</script>
 	<title>Test for TAO</title>
 </head>
 <body>
 	<p>Please enter a search criteria:</p>
 	<input id="namesFilterTxt" class="ui-priority-primary" />
-	<button type="submit" onclick="submit()">Submit</button>
+	<button id="submit">Submit</button>
 	<div id="content"></div>
 </body>
 </html>
